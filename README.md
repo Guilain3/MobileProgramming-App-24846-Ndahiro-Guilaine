@@ -11,22 +11,26 @@ A simple Mobile app built with Flutter, integrated with Firebase for authenticat
 
 **Calculator screen**
 
-![Screenshot 2024-06-30 000137](https://github.com/Guilain3/MobileProgramming-App-24846-Ndahiro-Guilaine/assets/153222631/a40ad435-dfc2-4c87-b1a6-878d8f9d54a7)
+![Screenshot 2024-06-30 000137](https://github.com/user-attachments/assets/fc57c94a-4bf6-403b-b117-e315d4f1a4f1)
+
 
 
 **Signup Screen**
 
-![Screenshot 2024-06-30 000307](https://github.com/Guilain3/MobileProgramming-App-24846-Ndahiro-Guilaine/assets/153222631/592866f4-9288-413a-919b-6a5d7250ac8b)
+![Screenshot 2024-06-30 000307](https://github.com/user-attachments/assets/37cec221-703a-450a-a9a9-69eabc2ba544)
+
 
 
 **SignIn Screen**
 
-![Screenshot 2024-06-30 000243](https://github.com/Guilain3/MobileProgramming-App-24846-Ndahiro-Guilaine/assets/153222631/0d0c75e0-67c4-4268-adfa-26affe18cef4)
+![Screenshot 2024-06-30 000243](https://github.com/user-attachments/assets/d946d001-9bf7-49e8-8447-2df6207258b5)
+
 
 
 **Hamburger Menu**
 
-![Screenshot 2024-06-30 000327](https://github.com/Guilain3/MobileProgramming-App-24846-Ndahiro-Guilaine/assets/153222631/b6dde012-ac2a-409a-8290-260e1443ba49)
+![Screenshot 2024-06-30 000327](https://github.com/user-attachments/assets/99bee036-2c80-40ce-ba2a-c8ab53ff5b5f)
+
 
 
 
