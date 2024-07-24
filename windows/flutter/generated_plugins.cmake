@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  battery_plus_windows
   cloud_firestore
   connectivity_plus_windows
   firebase_auth

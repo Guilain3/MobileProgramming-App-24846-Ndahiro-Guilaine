@@ -31,8 +31,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       final password = _passwordController.text;
 
       try {
-        UserCredential userCredential =
-            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: email,
           password: password,
         );
@@ -96,24 +95,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
         return;
       }
 
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      UserCredential userCredential =
-          await _auth.signInWithCredential(credential);
+      UserCredential userCredential = await _auth.signInWithCredential(credential);
 
       if (userCredential.additionalUserInfo!.isNewUser) {
         await _firestore.collection('users').doc(userCredential.user!.uid).set({
           'firstName': googleUser.displayName!.split(' ')[0],
           'lastName': googleUser.displayName!.split(' ').last,
           'email': googleUser.email,
-          'dateOfBirth':
-              '', // Add a date of birth field or remove it if not required
+          'dateOfBirth': '',
         });
       }
 
@@ -281,8 +277,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ElevatedButton(
                         onPressed: _signUp,
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 12),
+                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -302,8 +297,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         label: Text('Sign Up with Google'),
                         onPressed: _signUpWithGoogle,
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 12),
+                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),

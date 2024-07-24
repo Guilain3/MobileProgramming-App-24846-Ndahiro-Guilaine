@@ -3,7 +3,7 @@ import 'calc_screen.dart';
 import 'sign_in_screen.dart';
 import 'sign_up_screen.dart';
 import 'package:provider/provider.dart';
-import '../theme.dart';
+import '../services/theme.dart';
 
 class HomeScreen extends StatefulWidget {
   final int initialIndex;
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    final themeNotifier = Provider.of<ThemeService>(context);
 
     return Scaffold(
       appBar: AppBar(
