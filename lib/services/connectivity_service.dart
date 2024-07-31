@@ -1,11 +1,19 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ConnectivityService {
-  ConnectivityService() {
+  ConnectivityService._privateConstructor() {
     _initConnectivity();
   }
+  void checkCurrentConnectivity() async {
+    ConnectivityResult result = await _connectivity.checkConnectivity();
+    _showConnectivityToast(result);
+  }
+  static final ConnectivityService _instance =
+  ConnectivityService._privateConstructor();
+
+  static ConnectivityService get instance => _instance;
 
   final Connectivity _connectivity = Connectivity();
   late Stream<ConnectivityResult> _connectivityStream;

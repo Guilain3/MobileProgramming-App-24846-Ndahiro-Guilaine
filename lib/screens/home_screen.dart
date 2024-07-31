@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/connectivity_service.dart';
 import 'calc_screen.dart';
 import 'sign_in_screen.dart';
 import 'sign_up_screen.dart';
@@ -26,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    ConnectivityService.instance.checkCurrentConnectivity();
     _selectedIndex = widget.initialIndex;
   }
 
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('App Menu'),
         actions: [
           Switch(
-            value: themeNotifier.darkTheme,
+            value: themeNotifier.isDarkMode,
             onChanged: (value) {
               themeNotifier.toggleTheme();
             },
@@ -62,34 +64,34 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             DrawerHeader(
               child: Text('Menu', style: TextStyle(color: Colors.blue)),
-              decoration: BoxDecoration(color: Colors.white),
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
             ),
             ListTile(
               leading: Icon(Icons.person_add,
-                  color: _selectedIndex == 0 ? Colors.blue : Colors.black),
+                  color: _selectedIndex == 0 ? Colors.blue : Theme.of(context).iconTheme.color),
               title: Text('Sign Up',
                   style: TextStyle(
-                      color: _selectedIndex == 0 ? Colors.blue : Colors.black)),
+                      color: _selectedIndex == 0 ? Colors.blue : Theme.of(context).textTheme.bodyLarge?.color)),
               onTap: () {
                 _onDrawerItemTapped(0);
               },
             ),
             ListTile(
               leading: Icon(Icons.person,
-                  color: _selectedIndex == 1 ? Colors.blue : Colors.black),
+                  color: _selectedIndex == 1 ? Colors.blue : Theme.of(context).iconTheme.color),
               title: Text('Sign In',
                   style: TextStyle(
-                      color: _selectedIndex == 1 ? Colors.blue : Colors.black)),
+                      color: _selectedIndex == 1 ? Colors.blue : Theme.of(context).textTheme.bodyLarge?.color)),
               onTap: () {
                 _onDrawerItemTapped(1);
               },
             ),
             ListTile(
               leading: Icon(Icons.calculate,
-                  color: _selectedIndex == 2 ? Colors.blue : Colors.black),
+                  color: _selectedIndex == 2 ? Colors.blue : Theme.of(context).iconTheme.color),
               title: Text('Calculator',
                   style: TextStyle(
-                      color: _selectedIndex == 2 ? Colors.blue : Colors.black)),
+                      color: _selectedIndex == 2 ? Colors.blue : Theme.of(context).textTheme.bodyLarge?.color)),
               onTap: () {
                 _onDrawerItemTapped(2);
               },
