@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'home_screen.dart';
+// import 'home_screen.dart';
 import 'sign_in_screen.dart';
 
 // Define enableFirebase
@@ -23,7 +23,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _confirmPasswordController = TextEditingController();
 
   final FirebaseAuth? _auth = enableFirebase ? FirebaseAuth.instance : null;
-  final FirebaseFirestore? _firestore = enableFirebase ? FirebaseFirestore.instance : null;
+  final FirebaseFirestore? _firestore =
+      enableFirebase ? FirebaseFirestore.instance : null;
   final GoogleSignIn? _googleSignIn = enableFirebase ? GoogleSignIn() : null;
 
   Future<void> _signUp() async {
@@ -36,12 +37,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       if (enableFirebase) {
         try {
-          UserCredential userCredential = await _auth!.createUserWithEmailAndPassword(
+          UserCredential userCredential =
+              await _auth!.createUserWithEmailAndPassword(
             email: email,
             password: password,
           );
 
-          await _firestore!.collection('users').doc(userCredential.user!.uid).set({
+          await _firestore!
+              .collection('users')
+              .doc(userCredential.user!.uid)
+              .set({
             'firstName': firstName,
             'lastName': lastName,
             'email': email,
@@ -102,17 +107,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
           return;
         }
 
-        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+        final GoogleSignInAuthentication googleAuth =
+            await googleUser.authentication;
 
         final AuthCredential credential = GoogleAuthProvider.credential(
           accessToken: googleAuth.accessToken,
           idToken: googleAuth.idToken,
         );
 
-        UserCredential userCredential = await _auth!.signInWithCredential(credential);
+        UserCredential userCredential =
+            await _auth!.signInWithCredential(credential);
 
         if (userCredential.additionalUserInfo!.isNewUser) {
-          await _firestore!.collection('users').doc(userCredential.user!.uid).set({
+          await _firestore!
+              .collection('users')
+              .doc(userCredential.user!.uid)
+              .set({
             'firstName': googleUser.displayName!.split(' ')[0],
             'lastName': googleUser.displayName!.split(' ').last,
             'email': googleUser.email,
