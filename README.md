@@ -37,6 +37,23 @@ A simple Mobile app built with Flutter, integrated with Firebase for authenticat
 ![hamburger menu](https://github.com/user-attachments/assets/9cd5129e-49c7-4473-9220-a28b05b29a79)
 
 
+**Detection of internet connectivity**
+   **Online Detection **
+
+   ![online](https://github.com/user-attachments/assets/06992075-bdb7-4d8f-b419-f5db6a544be9)
+
+   **Offline Detection **
+
+   ![offline](https://github.com/user-attachments/assets/5fc48634-868a-4c56-b9f0-25e06f48ebbb)
+
+   
+
+
+    
+
+
+
+
 
 
 
