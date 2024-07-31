@@ -11,25 +11,31 @@ A simple Mobile app built with Flutter, integrated with Firebase for authenticat
 
 **Calculator screen**
 
-![Screenshot 2024-06-30 000137](https://github.com/user-attachments/assets/fc57c94a-4bf6-403b-b117-e315d4f1a4f1)
+![calculator](https://github.com/user-attachments/assets/e6df4181-cc09-4973-b78d-64f3bb18fe35)
+
 
 
 
 **Signup Screen**
 
-![Screenshot 2024-06-30 000307](https://github.com/user-attachments/assets/37cec221-703a-450a-a9a9-69eabc2ba544)
+![sign up](https://github.com/user-attachments/assets/efb90ff1-770f-418b-ba4a-acba023fe567)
+
+
 
 
 
 **SignIn Screen**
 
-![Screenshot 2024-06-30 000243](https://github.com/user-attachments/assets/d946d001-9bf7-49e8-8447-2df6207258b5)
+![sign in](https://github.com/user-attachments/assets/8f2d8ac1-a973-4368-a8f5-d2baef98b1a6)
+
+
 
 
 
 **Hamburger Menu**
 
-![Screenshot 2024-06-30 000327](https://github.com/user-attachments/assets/99bee036-2c80-40ce-ba2a-c8ab53ff5b5f)
+![hamburger menu](https://github.com/user-attachments/assets/9cd5129e-49c7-4473-9220-a28b05b29a79)
+
 
 
 
