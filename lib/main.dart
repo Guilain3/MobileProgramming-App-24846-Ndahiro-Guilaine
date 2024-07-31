@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // Add this import for MethodChannel
 import 'package:flutter_app/screens/home_screen.dart';
 import 'package:flutter_app/services/connectivity_service.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,21 @@ import 'services/theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ConnectivityService.instance;
+
+  // Initialize MethodChannel
+  const MethodChannel platform = MethodChannel('battery_channel');
+
+  // Set up a method call handler
+  platform.setMethodCallHandler((call) async {
+    if (call.method == 'battery_full') {
+      // Handle the method call from the Android side when the battery is full
+      print("Battery is full!");
+      // You can show a toast or any other action here
+    } else {
+      throw MissingPluginException('Not implemented: ${call.method}');
+    }
+  });
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeService(),
